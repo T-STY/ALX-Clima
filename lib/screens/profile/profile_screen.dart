@@ -69,7 +69,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                // ── Avatar ──────────────────────────────────────────
                 Center(
                   child: Stack(
                     children: [
@@ -80,12 +79,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                             colors: [
-                              AppTheme.primaryColor.withOpacity(0.15),
-                              AppTheme.secondaryColor.withOpacity(0.15),
+                              AppTheme.primaryColor.withValues(alpha: 0.15),
+                              AppTheme.secondaryColor.withValues(alpha: 0.15),
                             ],
                           ),
                           border: Border.all(
-                            color: AppTheme.primaryColor.withOpacity(0.2),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.2),
                             width: 2,
                           ),
                         ),
@@ -120,7 +119,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                 const SizedBox(height: 32),
 
-                // ── Form Fields ─────────────────────────────────────
                 _buildTextField(
                   controller: _nameController,
                   label: 'Nombre',
@@ -180,7 +178,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                 const SizedBox(height: 32),
 
-                // ── Stats Section ───────────────────────────────────
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),

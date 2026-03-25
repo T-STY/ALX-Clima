@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import 'package:alx_clima/config/theme.dart';
+import 'package:alx_clima/models/appointment.dart';
 import 'package:alx_clima/providers/appointment_provider.dart';
 import 'package:alx_clima/providers/dashboard_provider.dart';
 import 'package:alx_clima/widgets/empty_state_widget.dart';
@@ -32,7 +33,6 @@ class DashboardScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 24),
 
-                  // ── Header ─────────────────────────────────────────
                   Text(
                     'Mi Equipo',
                     style: Theme.of(context).textTheme.headlineMedium,
@@ -50,7 +50,6 @@ class DashboardScreen extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // ── Stats Cards ────────────────────────────────────
                   Row(
                     children: [
                       Expanded(
@@ -91,7 +90,6 @@ class DashboardScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-                  // ── Equipment List ─────────────────────────────────
                   const SectionHeader(title: 'Mis Equipos')
                       .animate()
                       .fadeIn(duration: 400.ms, delay: 200.ms),
@@ -130,7 +128,6 @@ class DashboardScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-                  // ── Upcoming Appointments ──────────────────────────
                   if (upcoming.isNotEmpty) ...[
                     const SectionHeader(title: 'Próximas Citas')
                         .animate()
@@ -143,8 +140,9 @@ class DashboardScreen extends StatelessWidget {
                       separatorBuilder: (_, __) => const SizedBox(height: 10),
                       itemBuilder: (context, index) {
                         final apt = upcoming[index];
-                        final equip =
-                            dashboard.getEquipmentById(apt.equipmentId);
+                        final equip = apt.equipmentId != null
+                            ? dashboard.getEquipmentById(apt.equipmentId!)
+                            : null;
                         return Container(
                           padding: const EdgeInsets.all(14),
                           decoration: BoxDecoration(
@@ -158,7 +156,7 @@ class DashboardScreen extends StatelessWidget {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   color:
-                                      AppTheme.primaryColor.withOpacity(0.1),
+                                      AppTheme.primaryColor.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Icon(
@@ -203,9 +201,9 @@ class DashboardScreen extends StatelessWidget {
                                   color: apt.status ==
                                           AppointmentStatus.confirmed
                                       ? AppTheme.successColor
-                                          .withOpacity(0.12)
+                                          .withValues(alpha: 0.12)
                                       : AppTheme.warningColor
-                                          .withOpacity(0.12),
+                                          .withValues(alpha: 0.12),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
@@ -266,9 +264,9 @@ class _DashStatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.15)),
+        border: Border.all(color: color.withValues(alpha: 0.15)),
       ),
       child: Column(
         children: [

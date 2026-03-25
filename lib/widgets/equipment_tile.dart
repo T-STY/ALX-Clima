@@ -26,12 +26,12 @@ class EquipmentTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: needsService
-                ? AppTheme.warningColor.withOpacity(0.4)
+                ? AppTheme.warningColor.withValues(alpha: 0.4)
                 : AppTheme.dividerColor,
           ),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primaryColor.withOpacity(0.04),
+              color: AppTheme.primaryColor.withValues(alpha: 0.04),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -43,8 +43,8 @@ class EquipmentTile extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: needsService
-                    ? AppTheme.warningColor.withOpacity(0.1)
-                    : AppTheme.primaryColor.withOpacity(0.1),
+                    ? AppTheme.warningColor.withValues(alpha: 0.1)
+                    : AppTheme.primaryColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -91,7 +91,7 @@ class EquipmentTile extends StatelessWidget {
             ),
             Icon(
               Iconsax.arrow_right_3,
-              color: AppTheme.textSecondary.withOpacity(0.5),
+              color: AppTheme.textSecondary.withValues(alpha: 0.5),
               size: 20,
             ),
           ],

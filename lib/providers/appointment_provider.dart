@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:alx_clima/models/appointment.dart';
 import 'package:alx_clima/models/service_record.dart';
 
-/// Proveedor que gestiona las citas del cliente: agendar, cancelar
-/// y obtener las pr\u00f3ximas citas.
 class AppointmentProvider extends ChangeNotifier {
   List<Appointment> _appointments = [];
 
@@ -11,11 +9,8 @@ class AppointmentProvider extends ChangeNotifier {
     _initializeDemoData();
   }
 
-  // ── Getters ──────────────────────────────────────────────────────────
-
   List<Appointment> get appointments => List.unmodifiable(_appointments);
 
-  /// Retorna las citas pr\u00f3ximas (pendientes o confirmadas, con fecha futura).
   List<Appointment> get upcomingAppointments {
     final now = DateTime.now();
     return _appointments
@@ -27,15 +22,11 @@ class AppointmentProvider extends ChangeNotifier {
       ..sort((a, b) => a.preferredDate.compareTo(b.preferredDate));
   }
 
-  // ── M\u00e9todos ─────────────────────────────────────────────────────────
-
-  /// Agenda una nueva cita.
   void scheduleAppointment(Appointment appointment) {
     _appointments = [..._appointments, appointment];
     notifyListeners();
   }
 
-  /// Cancela una cita existente por su ID.
   void cancelAppointment(String appointmentId) {
     _appointments = _appointments.map((a) {
       if (a.id == appointmentId) {
@@ -46,10 +37,7 @@ class AppointmentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Retorna las citas pr\u00f3ximas (alias del getter para conveniencia).
   List<Appointment> getUpcomingAppointments() => upcomingAppointments;
-
-  // ── Datos de demostraci\u00f3n ──────────────────────────────────────────
 
   void _initializeDemoData() {
     final now = DateTime.now();

@@ -24,15 +24,14 @@ class ContactScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            // ── Branding Area ───────────────────────────────────────
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 32),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppTheme.primaryColor.withOpacity(0.06),
-                    AppTheme.secondaryColor.withOpacity(0.06),
+                    AppTheme.primaryColor.withValues(alpha: 0.06),
+                    AppTheme.secondaryColor.withValues(alpha: 0.06),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(20),
@@ -77,7 +76,6 @@ class ContactScreen extends StatelessWidget {
 
             const SizedBox(height: 28),
 
-            // ── Quick Action Cards ──────────────────────────────────
             _ContactCard(
               icon: Iconsax.call,
               title: 'Llamar',
@@ -134,7 +132,6 @@ class ContactScreen extends StatelessWidget {
 
             const SizedBox(height: 28),
 
-            // ── Business Hours ───────────────────────────────────────
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16),
@@ -171,7 +168,7 @@ class ContactScreen extends StatelessWidget {
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: AppTheme.errorColor.withOpacity(0.06),
+                      color: AppTheme.errorColor.withValues(alpha: 0.06),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
@@ -201,7 +198,6 @@ class ContactScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // ── Map Placeholder ──────────────────────────────────────
             Container(
               width: double.infinity,
               height: 160,
@@ -216,7 +212,7 @@ class ContactScreen extends StatelessWidget {
                   Icon(
                     Iconsax.location,
                     size: 36,
-                    color: AppTheme.primaryColor.withOpacity(0.5),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.5),
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -269,10 +265,10 @@ class _ContactCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppTheme.cardColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: color.withOpacity(0.2)),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.06),
+              color: color.withValues(alpha: 0.06),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -283,7 +279,7 @@ class _ContactCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: color, size: 24),
@@ -310,7 +306,7 @@ class _ContactCard extends StatelessWidget {
             ),
             Icon(
               Iconsax.arrow_right_3,
-              color: color.withOpacity(0.5),
+              color: color.withValues(alpha: 0.5),
               size: 20,
             ),
           ],

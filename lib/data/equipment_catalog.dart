@@ -4,7 +4,6 @@ class EquipmentCatalog {
   EquipmentCatalog._();
 
   static List<Equipment> get items => const [
-        // ── 12,000 BTU ─────────────────────────────────────────────────
         Equipment(
           id: 'ms-carrier-12',
           name: 'Carrier Comfort 12K',
@@ -70,7 +69,6 @@ class EquipmentCatalog {
               '10 años en compresor inverter, 2 años en partes.',
         ),
 
-        // ── 18,000 BTU ─────────────────────────────────────────────────
         Equipment(
           id: 'ms-carrier-18',
           name: 'Carrier XPower 18K',
@@ -136,7 +134,6 @@ class EquipmentCatalog {
               '10 años en compresor inverter, 2 años en partes.',
         ),
 
-        // ── 24,000 BTU ─────────────────────────────────────────────────
         Equipment(
           id: 'ms-carrier-24',
           name: 'Carrier XPower 24K',
@@ -186,7 +183,6 @@ class EquipmentCatalog {
               '7 años en compresor, 2 años en partes y accesorios.',
         ),
 
-        // ── 36,000 BTU ─────────────────────────────────────────────────
         Equipment(
           id: 'ms-carrier-36',
           name: 'Carrier XPower 36K',
@@ -237,27 +233,22 @@ class EquipmentCatalog {
         ),
       ];
 
-  /// Filtra equipos por tipo.
   static List<Equipment> byType(EquipmentType type) {
     return items.where((e) => e.type == type).toList();
   }
 
-  /// Filtra equipos por capacidad en BTU.
   static List<Equipment> byCapacity(int btu) {
     return items.where((e) => e.btuCapacity == btu).toList();
   }
 
-  /// Filtra equipos por marca.
   static List<Equipment> byBrand(String brand) {
     return items.where((e) => e.brand == brand).toList();
   }
 
-  /// Obtiene las marcas disponibles sin duplicados.
   static List<String> get availableBrands {
     return items.map((e) => e.brand).toSet().toList()..sort();
   }
 
-  /// Obtiene las capacidades disponibles sin duplicados.
   static List<int> get availableCapacities {
     return items.map((e) => e.btuCapacity).toSet().toList()..sort();
   }

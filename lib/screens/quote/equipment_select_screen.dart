@@ -46,7 +46,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
       ),
       body: Column(
         children: [
-          // ── Filter Chips: Type ──────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
             child: SingleChildScrollView(
@@ -65,7 +64,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
             ),
           ),
 
-          // ── Filter Chips: BTU ──────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 10, 20, 12),
             child: SingleChildScrollView(
@@ -86,7 +84,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
             ),
           ),
 
-          // ── Equipment List ─────────────────────────────────────
           Expanded(
             child: _filteredEquipment.isEmpty
                 ? Center(
@@ -96,7 +93,7 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
                         Icon(
                           Iconsax.search_normal,
                           size: 48,
-                          color: AppTheme.textSecondary.withOpacity(0.4),
+                          color: AppTheme.textSecondary.withValues(alpha: 0.4),
                         ),
                         const SizedBox(height: 12),
                         Text(
@@ -134,7 +131,7 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
       label: Text(label),
       selected: isSelected,
       onSelected: (_) => setState(() => _selectedType = type),
-      selectedColor: AppTheme.primaryColor.withOpacity(0.12),
+      selectedColor: AppTheme.primaryColor.withValues(alpha: 0.12),
       checkmarkColor: AppTheme.primaryColor,
       labelStyle: TextStyle(
         color: isSelected ? AppTheme.primaryColor : AppTheme.textSecondary,
@@ -150,7 +147,7 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
       label: Text(label),
       selected: isSelected,
       onSelected: (_) => setState(() => _selectedBtu = btu),
-      selectedColor: AppTheme.secondaryColor.withOpacity(0.12),
+      selectedColor: AppTheme.secondaryColor.withValues(alpha: 0.12),
       checkmarkColor: AppTheme.secondaryColor,
       labelStyle: TextStyle(
         color: isSelected ? AppTheme.secondaryColor : AppTheme.textSecondary,
@@ -182,7 +179,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Handle bar
                 Center(
                   child: Container(
                     width: 40,
@@ -195,7 +191,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
                 ),
                 const SizedBox(height: 20),
 
-                // Equipment image placeholder
                 Container(
                   height: 120,
                   width: double.infinity,
@@ -227,7 +222,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                // Specs row
                 Row(
                   children: [
                     _specBadge(context, Iconsax.wind, equipment.btuFormatted),
@@ -246,14 +240,13 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
 
                 const SizedBox(height: 16),
 
-                // Warranty info
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: AppTheme.successColor.withOpacity(0.06),
+                    color: AppTheme.successColor.withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: AppTheme.successColor.withOpacity(0.2),
+                      color: AppTheme.successColor.withValues(alpha: 0.2),
                     ),
                   ),
                   child: Row(
@@ -276,7 +269,6 @@ class _EquipmentSelectScreenState extends State<EquipmentSelectScreen> {
 
                 const SizedBox(height: 20),
 
-                // Price
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -364,7 +356,7 @@ class _EquipmentCard extends StatelessWidget {
           border: Border.all(color: AppTheme.dividerColor),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primaryColor.withOpacity(0.04),
+              color: AppTheme.primaryColor.withValues(alpha: 0.04),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -434,7 +426,7 @@ class _EquipmentCard extends StatelessWidget {
             ),
             Icon(
               Iconsax.arrow_right_3,
-              color: AppTheme.textSecondary.withOpacity(0.5),
+              color: AppTheme.textSecondary.withValues(alpha: 0.5),
               size: 20,
             ),
           ],

@@ -11,7 +11,6 @@ import 'package:alx_clima/providers/quote_provider.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Force light status bar icons on white background
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

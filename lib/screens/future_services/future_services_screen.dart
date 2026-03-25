@@ -37,7 +37,6 @@ class FutureServicesScreen extends StatelessWidget {
 
               const SizedBox(height: 28),
 
-              // ── Available Now ───────────────────────────────────────
               Text(
                 'Disponible Ahora',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -88,7 +87,6 @@ class FutureServicesScreen extends StatelessWidget {
 
               const SizedBox(height: 32),
 
-              // ── Coming Soon ─────────────────────────────────────────
               Text(
                 'Próximamente',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -130,20 +128,19 @@ class FutureServicesScreen extends StatelessWidget {
 
               const SizedBox(height: 28),
 
-              // ── Message ─────────────────────────────────────────────
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppTheme.primaryColor.withOpacity(0.05),
-                      AppTheme.secondaryColor.withOpacity(0.05),
+                      AppTheme.primaryColor.withValues(alpha: 0.05),
+                      AppTheme.secondaryColor.withValues(alpha: 0.05),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: AppTheme.primaryColor.withOpacity(0.1),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.1),
                   ),
                 ),
                 child: Column(
@@ -209,7 +206,7 @@ class _ServiceCard extends StatelessWidget {
           border: Border.all(color: AppTheme.dividerColor),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.06),
+              color: color.withValues(alpha: 0.06),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -220,7 +217,7 @@ class _ServiceCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: color, size: 24),
@@ -249,7 +246,7 @@ class _ServiceCard extends StatelessWidget {
             ),
             Icon(
               Iconsax.arrow_right_3,
-              color: AppTheme.textSecondary.withOpacity(0.5),
+              color: AppTheme.textSecondary.withValues(alpha: 0.5),
               size: 20,
             ),
           ],
@@ -286,7 +283,7 @@ class _ComingSoonCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.textSecondary.withOpacity(0.08),
+                color: AppTheme.textSecondary.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: AppTheme.textSecondary, size: 24),

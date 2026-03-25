@@ -41,7 +41,7 @@ class FloorSelector extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? AppTheme.primaryColor.withOpacity(0.1)
+                        ? AppTheme.primaryColor.withValues(alpha: 0.1)
                         : AppTheme.surfaceColor,
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(
@@ -129,7 +129,7 @@ class FloorSelector extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
             color: isSelected
-                ? AppTheme.primaryColor.withOpacity(0.1)
+                ? AppTheme.primaryColor.withValues(alpha: 0.1)
                 : AppTheme.surfaceColor,
             borderRadius: BorderRadius.circular(14),
             border: Border.all(

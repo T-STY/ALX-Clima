@@ -21,12 +21,10 @@ final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
   initialLocation: '/home',
   routes: [
-    // ── Shell Route with Bottom Navigation ──────────────────────────
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) =>
           ShellScreen(navigationShell: navigationShell),
       branches: [
-        // Tab 0: Inicio
         StatefulShellBranch(
           routes: [
             GoRoute(
@@ -36,7 +34,6 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // Tab 1: Cotizar
         StatefulShellBranch(
           routes: [
             GoRoute(
@@ -46,7 +43,6 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // Tab 2: Mi Equipo
         StatefulShellBranch(
           routes: [
             GoRoute(
@@ -56,7 +52,6 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // Tab 3: Más
         StatefulShellBranch(
           routes: [
             GoRoute(
@@ -68,7 +63,6 @@ final GoRouter appRouter = GoRouter(
       ],
     ),
 
-    // ── Quote Flow (pushed on top of shell) ─────────────────────────
     GoRoute(
       parentNavigatorKey: _rootNavigatorKey,
       path: '/quote/equipment',
@@ -85,7 +79,6 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const QuoteSummaryScreen(),
     ),
 
-    // ── Dashboard Detail Routes ─────────────────────────────────────
     GoRoute(
       parentNavigatorKey: _rootNavigatorKey,
       path: '/dashboard/equipment/:id',
@@ -99,7 +92,6 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const ScheduleScreen(),
     ),
 
-    // ── Standalone Screens ──────────────────────────────────────────
     GoRoute(
       parentNavigatorKey: _rootNavigatorKey,
       path: '/profile',

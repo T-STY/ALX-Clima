@@ -54,7 +54,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // ── Equipment Selector ─────────────────────────
                       Text(
                         'Equipo (opcional)',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -99,7 +98,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ── Service Type ───────────────────────────────
                       Text(
                         'Tipo de Servicio',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -122,7 +120,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ── Date Picker ────────────────────────────────
                       Text(
                         'Fecha Preferida',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -175,7 +172,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ── Time Slot ──────────────────────────────────
                       Text(
                         'Horario Preferido',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -209,7 +205,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ── Notes ──────────────────────────────────────
                       Text(
                         'Notas',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -227,16 +222,15 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ── Summary Card ───────────────────────────────
                       if (_selectedDate != null)
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: AppTheme.primaryColor.withOpacity(0.06),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.06),
                             borderRadius: BorderRadius.circular(14),
                             border: Border.all(
-                              color: AppTheme.primaryColor.withOpacity(0.15),
+                              color: AppTheme.primaryColor.withValues(alpha: 0.15),
                             ),
                           ),
                           child: Column(
@@ -294,14 +288,13 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                 ),
               ),
 
-              // ── Confirm Button ─────────────────────────────────────
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: AppTheme.backgroundColor,
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.primaryColor.withOpacity(0.06),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.06),
                       blurRadius: 16,
                       offset: const Offset(0, -4),
                     ),
@@ -327,7 +320,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       label: Text(label),
       selected: isSelected,
       onSelected: (_) => setState(() => _selectedServiceType = type),
-      selectedColor: AppTheme.primaryColor.withOpacity(0.12),
+      selectedColor: AppTheme.primaryColor.withValues(alpha: 0.12),
       checkmarkColor: AppTheme.primaryColor,
       labelStyle: TextStyle(
         color: isSelected ? AppTheme.primaryColor : AppTheme.textSecondary,
@@ -350,7 +343,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppTheme.primaryColor.withOpacity(0.1)
+              ? AppTheme.primaryColor.withValues(alpha: 0.1)
               : AppTheme.surfaceColor,
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
@@ -382,7 +375,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               subtitle,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: isSelected
-                        ? AppTheme.primaryColor.withOpacity(0.7)
+                        ? AppTheme.primaryColor.withValues(alpha: 0.7)
                         : AppTheme.textSecondary,
                     fontSize: 11,
                   ),

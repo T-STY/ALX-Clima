@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTheme {
   AppTheme._();
 
-  // ── Color Palette ──────────────────────────────────────────────────
   static const Color primaryColor = Color(0xFF0A84FF);
   static const Color secondaryColor = Color(0xFF00D4FF);
   static const Color backgroundColor = Color(0xFFFFFFFF);
@@ -17,9 +16,8 @@ class AppTheme {
   static const Color successColor = Color(0xFF22C55E);
   static const Color warningColor = Color(0xFFF59E0B);
 
-  // ── Theme Data ─────────────────────────────────────────────────────
   static ThemeData get lightTheme {
-    final baseTextTheme = GoogleFonts.poppinsTextTheme();
+    final baseTextTheme = GoogleFonts.exo2TextTheme();
 
     return ThemeData(
       useMaterial3: true,
@@ -37,7 +35,6 @@ class AppTheme {
         onError: Colors.white,
       ),
 
-      // ── Typography ───────────────────────────────────────────────
       textTheme: baseTextTheme.copyWith(
         displayLarge: baseTextTheme.displayLarge?.copyWith(
           color: textPrimary,
@@ -86,32 +83,29 @@ class AppTheme {
         ),
       ),
 
-      // ── AppBar ───────────────────────────────────────────────────
       appBarTheme: AppBarTheme(
         backgroundColor: backgroundColor,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: true,
         iconTheme: const IconThemeData(color: textPrimary),
-        titleTextStyle: GoogleFonts.poppins(
+        titleTextStyle: GoogleFonts.exo2(
           color: textPrimary,
           fontSize: 18,
           fontWeight: FontWeight.w600,
         ),
       ),
 
-      // ── Cards ────────────────────────────────────────────────────
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
-        shadowColor: primaryColor.withOpacity(0.08),
+        shadowColor: primaryColor.withValues(alpha: 0.08),
         surfaceTintColor: Colors.transparent,
       ),
 
-      // ── Elevated Button ──────────────────────────────────────────
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
@@ -121,14 +115,13 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: GoogleFonts.poppins(
+          textStyle: GoogleFonts.exo2(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
 
-      // ── Outlined Button ──────────────────────────────────────────
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: primaryColor,
@@ -138,25 +131,23 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: GoogleFonts.poppins(
+          textStyle: GoogleFonts.exo2(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
 
-      // ── Text Button ──────────────────────────────────────────────
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: primaryColor,
-          textStyle: GoogleFonts.poppins(
+          textStyle: GoogleFonts.exo2(
             fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
 
-      // ── Input Decoration ─────────────────────────────────────────
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: surfaceColor,
@@ -184,17 +175,16 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: errorColor, width: 1.5),
         ),
-        hintStyle: GoogleFonts.poppins(
-          color: textSecondary.withOpacity(0.5),
+        hintStyle: GoogleFonts.exo2(
+          color: textSecondary.withValues(alpha: 0.5),
           fontSize: 14,
         ),
-        labelStyle: GoogleFonts.poppins(
+        labelStyle: GoogleFonts.exo2(
           color: textSecondary,
           fontSize: 14,
         ),
       ),
 
-      // ── Bottom Navigation Bar ────────────────────────────────────
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: backgroundColor,
         elevation: 0,
@@ -204,21 +194,20 @@ class AppTheme {
         showUnselectedLabels: true,
       ),
 
-      // ── Navigation Bar (Material 3) ─────────────────────────────
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: backgroundColor,
         elevation: 0,
-        indicatorColor: primaryColor.withOpacity(0.12),
+        indicatorColor: primaryColor.withValues(alpha: 0.12),
         surfaceTintColor: Colors.transparent,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return GoogleFonts.poppins(
+            return GoogleFonts.exo2(
               fontSize: 12,
               fontWeight: FontWeight.w600,
               color: primaryColor,
             );
           }
-          return GoogleFonts.poppins(
+          return GoogleFonts.exo2(
             fontSize: 12,
             fontWeight: FontWeight.w500,
             color: textSecondary,
@@ -232,25 +221,22 @@ class AppTheme {
         }),
       ),
 
-      // ── Divider ──────────────────────────────────────────────────
       dividerTheme: const DividerThemeData(
         color: dividerColor,
         thickness: 1,
         space: 1,
       ),
 
-      // ── Chip ─────────────────────────────────────────────────────
       chipTheme: ChipThemeData(
         backgroundColor: surfaceColor,
-        selectedColor: primaryColor.withOpacity(0.12),
-        labelStyle: GoogleFonts.poppins(fontSize: 13),
+        selectedColor: primaryColor.withValues(alpha: 0.12),
+        labelStyle: GoogleFonts.exo2(fontSize: 13),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
         side: BorderSide.none,
       ),
 
-      // ── Floating Action Button ───────────────────────────────────
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: primaryColor,
         foregroundColor: Colors.white,
@@ -258,8 +244,7 @@ class AppTheme {
         shape: CircleBorder(),
       ),
 
-      // ── Dialog ───────────────────────────────────────────────────
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: backgroundColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -267,7 +252,6 @@ class AppTheme {
         ),
       ),
 
-      // ── Bottom Sheet ─────────────────────────────────────────────
       bottomSheetTheme: const BottomSheetThemeData(
         backgroundColor: backgroundColor,
         shape: RoundedRectangleBorder(
@@ -275,7 +259,6 @@ class AppTheme {
         ),
       ),
 
-      // ── Snack Bar ────────────────────────────────────────────────
       snackBarTheme: SnackBarThemeData(
         backgroundColor: textPrimary,
         behavior: SnackBarBehavior.floating,

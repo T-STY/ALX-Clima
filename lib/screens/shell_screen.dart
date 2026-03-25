@@ -18,14 +18,14 @@ class ShellScreen extends StatelessWidget {
           color: AppTheme.backgroundColor,
           boxShadow: [
             BoxShadow(
-              color: AppTheme.primaryColor.withOpacity(0.06),
+              color: AppTheme.primaryColor.withValues(alpha: 0.06),
               blurRadius: 20,
               offset: const Offset(0, -4),
             ),
           ],
           border: Border(
             top: BorderSide(
-              color: AppTheme.dividerColor.withOpacity(0.5),
+              color: AppTheme.dividerColor.withValues(alpha: 0.5),
               width: 0.5,
             ),
           ),

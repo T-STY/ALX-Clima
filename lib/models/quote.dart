@@ -22,13 +22,11 @@ class Quote {
     required this.createdAt,
   });
 
-  /// Resumen legible de la cotización.
   String get summary {
     final tipo = installationType.displayName;
     final piso = installationDetails.floorLevel.displayName;
     return '$tipo - $piso - Total: \$${totalPrice.toStringAsFixed(2)}';
   }
 
-  /// Indica si la cotización incluye equipo.
   bool get hasEquipment => equipment != null;
 }

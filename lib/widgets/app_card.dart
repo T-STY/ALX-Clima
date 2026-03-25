@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:alx_clima/config/theme.dart';
 
-/// Tarjeta futurista con fondo blanco, sombra sutil, esquinas redondeadas
-/// y borde degradado opcional (azul a cian).
 class AppCard extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
@@ -133,7 +131,7 @@ class _AppCardState extends State<AppCard> with SingleTickerProviderStateMixin {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.primaryColor.withOpacity(0.10),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.10),
                     blurRadius: 16,
                     offset: const Offset(0, 4),
                   ),
@@ -154,12 +152,12 @@ class _AppCardState extends State<AppCard> with SingleTickerProviderStateMixin {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.primaryColor.withOpacity(0.06),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.06),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.03),
+                    color: Colors.black.withValues(alpha: 0.03),
                     blurRadius: 6,
                     offset: const Offset(0, 2),
                   ),

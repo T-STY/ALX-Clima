@@ -12,7 +12,7 @@ class CustomerEquipment {
   final DateTime nextServiceDate;
   final InstallationType installationType;
   final String? notes;
-  final String? location; // e.g. "Sala", "Dormitorio principal"
+  final String? location;
 
   const CustomerEquipment({
     required this.id,
@@ -28,7 +28,6 @@ class CustomerEquipment {
     this.location,
   });
 
-  /// Indica si el equipo necesita servicio de mantenimiento.
   bool get needsService => DateTime.now().isAfter(nextServiceDate);
 
   CustomerEquipment copyWith({

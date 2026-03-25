@@ -68,7 +68,6 @@ class Equipment {
     );
   }
 
-  /// Formato legible de la capacidad en BTU.
   String get btuFormatted =>
       '${(btuCapacity / 1000).toStringAsFixed(0)}K BTU';
 

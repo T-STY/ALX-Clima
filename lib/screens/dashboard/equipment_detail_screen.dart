@@ -50,20 +50,19 @@ class EquipmentDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ── Hero Card ────────────────────────────────────────
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        AppTheme.primaryColor.withOpacity(0.06),
-                        AppTheme.secondaryColor.withOpacity(0.06),
+                        AppTheme.primaryColor.withValues(alpha: 0.06),
+                        AppTheme.secondaryColor.withValues(alpha: 0.06),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: AppTheme.primaryColor.withOpacity(0.12),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.12),
                     ),
                   ),
                   child: Column(
@@ -74,7 +73,7 @@ class EquipmentDetailScreen extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(14),
                             decoration: BoxDecoration(
-                              color: AppTheme.primaryColor.withOpacity(0.1),
+                              color: AppTheme.primaryColor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(14),
                             ),
                             child: const Icon(
@@ -136,7 +135,6 @@ class EquipmentDetailScreen extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                // ── Status Badge ─────────────────────────────────────
                 Row(
                   children: [
                     Text(
@@ -162,16 +160,15 @@ class EquipmentDetailScreen extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                // ── Warranty Section ─────────────────────────────────
                 if (isFullPackage) ...[
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: AppTheme.successColor.withOpacity(0.06),
+                      color: AppTheme.successColor.withValues(alpha: 0.06),
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
-                        color: AppTheme.successColor.withOpacity(0.2),
+                        color: AppTheme.successColor.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Column(
@@ -214,10 +211,10 @@ class EquipmentDetailScreen extends StatelessWidget {
                     width: double.infinity,
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: AppTheme.warningColor.withOpacity(0.06),
+                      color: AppTheme.warningColor.withValues(alpha: 0.06),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppTheme.warningColor.withOpacity(0.2),
+                        color: AppTheme.warningColor.withValues(alpha: 0.2),
                       ),
                     ),
                     child: Row(
@@ -242,7 +239,6 @@ class EquipmentDetailScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                 ],
 
-                // ── Service History ──────────────────────────────────
                 const SectionHeader(title: 'Historial de Servicios')
                     .animate()
                     .fadeIn(duration: 400.ms, delay: 300.ms),
@@ -262,7 +258,7 @@ class EquipmentDetailScreen extends StatelessWidget {
                         Icon(
                           Iconsax.document_text,
                           size: 36,
-                          color: AppTheme.textSecondary.withOpacity(0.4),
+                          color: AppTheme.textSecondary.withValues(alpha: 0.4),
                         ),
                         const SizedBox(height: 8),
                         Text(

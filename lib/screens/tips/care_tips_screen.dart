@@ -43,14 +43,13 @@ class CareTipsScreen extends StatelessWidget {
             ),
           ),
 
-          // ── Bottom CTA ──────────────────────────────────────────
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: AppTheme.backgroundColor,
               boxShadow: [
                 BoxShadow(
-                  color: AppTheme.primaryColor.withOpacity(0.06),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.06),
                   blurRadius: 16,
                   offset: const Offset(0, -4),
                 ),
@@ -109,18 +108,18 @@ class _ExpandableTipCardState extends State<_ExpandableTipCard> {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: _isExpanded
-              ? AppTheme.primaryColor.withOpacity(0.04)
+              ? AppTheme.primaryColor.withValues(alpha: 0.04)
               : AppTheme.cardColor,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: _isExpanded
-                ? AppTheme.primaryColor.withOpacity(0.2)
+                ? AppTheme.primaryColor.withValues(alpha: 0.2)
                 : AppTheme.dividerColor,
           ),
           boxShadow: [
             if (_isExpanded)
               BoxShadow(
-                color: AppTheme.primaryColor.withOpacity(0.06),
+                color: AppTheme.primaryColor.withValues(alpha: 0.06),
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),
@@ -134,7 +133,7 @@ class _ExpandableTipCardState extends State<_ExpandableTipCard> {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: AppTheme.primaryColor.withOpacity(0.1),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(

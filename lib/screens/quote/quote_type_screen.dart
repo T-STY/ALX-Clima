@@ -23,7 +23,6 @@ class QuoteTypeScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 32),
 
-              // ── Header ──────────────────────────────────────────
               Text(
                 '¿Qué necesitas?',
                 style: Theme.of(context).textTheme.headlineMedium,
@@ -41,7 +40,6 @@ class QuoteTypeScreen extends StatelessWidget {
 
               const SizedBox(height: 36),
 
-              // ── Full Package Card ───────────────────────────────
               _QuoteTypeCard(
                 icon: Iconsax.box_1,
                 title: 'Equipo + Instalación',
@@ -66,7 +64,6 @@ class QuoteTypeScreen extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              // ── Install Only Card ───────────────────────────────
               _QuoteTypeCard(
                 icon: Iconsax.setting_2,
                 title: 'Solo Instalación',
@@ -128,7 +125,7 @@ class _QuoteTypeCard extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: gradient.first.withOpacity(0.08),
+              color: gradient.first.withValues(alpha: 0.08),
               blurRadius: 20,
               offset: const Offset(0, 8),
             ),
@@ -150,7 +147,7 @@ class _QuoteTypeCard extends StatelessWidget {
                 const Spacer(),
                 Icon(
                   Iconsax.arrow_right_3,
-                  color: AppTheme.textSecondary.withOpacity(0.5),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.5),
                   size: 22,
                 ),
               ],

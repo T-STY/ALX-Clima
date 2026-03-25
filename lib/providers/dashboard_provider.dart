@@ -5,8 +5,6 @@ import 'package:alx_clima/models/equipment.dart';
 import 'package:alx_clima/models/installation.dart';
 import 'package:alx_clima/models/service_record.dart';
 
-/// Proveedor que gestiona los datos del cliente: equipos, historial de
-/// servicio y perfil. Se inicializa con datos de demostraci\u00f3n.
 class DashboardProvider extends ChangeNotifier {
   List<CustomerEquipment> _equipment = [];
   List<ServiceRecord> _serviceHistory = [];
@@ -15,8 +13,6 @@ class DashboardProvider extends ChangeNotifier {
   DashboardProvider() {
     _initializeDemoData();
   }
-
-  // ── Getters ──────────────────────────────────────────────────────────
 
   List<CustomerEquipment> get equipment => List.unmodifiable(_equipment);
   List<ServiceRecord> get serviceHistory => List.unmodifiable(_serviceHistory);
@@ -52,8 +48,6 @@ class DashboardProvider extends ChangeNotifier {
     }
   }
 
-  // ── M\u00e9todos ─────────────────────────────────────────────────────────
-
   void addEquipment(CustomerEquipment item) {
     _equipment = [..._equipment, item];
     notifyListeners();
@@ -75,8 +69,6 @@ class DashboardProvider extends ChangeNotifier {
     _profile = newProfile;
     notifyListeners();
   }
-
-  // ── Datos de demostraci\u00f3n ──────────────────────────────────────────
 
   void _initializeDemoData() {
     final now = DateTime.now();

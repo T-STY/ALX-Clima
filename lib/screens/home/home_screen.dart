@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 24),
 
-                  // ── Welcome Header ──────────────────────────────────
                   _buildWelcomeHeader(context)
                       .animate()
                       .fadeIn(duration: 500.ms)
@@ -36,7 +35,6 @@ class HomeScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // ── Quick Stats (if user has equipment) ─────────────
                   if (dashboard.totalEquipment > 0) ...[
                     _buildQuickStats(context, dashboard)
                         .animate()
@@ -45,12 +43,10 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: 24),
                   ],
 
-                  // ── Action Grid ─────────────────────────────────────
                   _buildActionGrid(context, dashboard),
 
                   const SizedBox(height: 32),
 
-                  // ── Tips Section ────────────────────────────────────
                   SectionHeader(
                     title: 'Consejos de Mantenimiento',
                     trailingAction: 'Ver todos',
@@ -68,7 +64,6 @@ class HomeScreen extends StatelessWidget {
 
                   const SizedBox(height: 32),
 
-                  // ── Emergency Button ────────────────────────────────
                   _buildEmergencyButton(context)
                       .animate()
                       .fadeIn(duration: 500.ms, delay: 600.ms)
@@ -218,7 +213,7 @@ class HomeScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: action.gradient.first.withOpacity(0.3),
+              color: action.gradient.first.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -233,7 +228,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(action.icon, color: Colors.white, size: 24),
@@ -294,7 +289,7 @@ class HomeScreen extends StatelessWidget {
               color: AppTheme.surfaceColor,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: AppTheme.dividerColor.withOpacity(0.5),
+                color: AppTheme.dividerColor.withValues(alpha: 0.5),
               ),
             ),
             child: Column(
@@ -344,10 +339,10 @@ class HomeScreen extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
         decoration: BoxDecoration(
-          color: AppTheme.errorColor.withOpacity(0.08),
+          color: AppTheme.errorColor.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: AppTheme.errorColor.withOpacity(0.3),
+            color: AppTheme.errorColor.withValues(alpha: 0.3),
           ),
         ),
         child: Row(
@@ -391,9 +386,9 @@ class _StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Row(
         children: [

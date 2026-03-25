@@ -45,20 +45,19 @@ class InstallationDetailsScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // ── Visual Illustration ───────────────────────
                       Container(
                         width: double.infinity,
                         height: 140,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              AppTheme.primaryColor.withOpacity(0.05),
-                              AppTheme.secondaryColor.withOpacity(0.05),
+                              AppTheme.primaryColor.withValues(alpha: 0.05),
+                              AppTheme.secondaryColor.withValues(alpha: 0.05),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: AppTheme.primaryColor.withOpacity(0.1),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.1),
                           ),
                         ),
                         child: Column(
@@ -98,7 +97,6 @@ class InstallationDetailsScreen extends StatelessWidget {
 
                       const SizedBox(height: 28),
 
-                      // ── Floor Selector ────────────────────────────
                       FloorSelector(
                         selectedFloor: details.floorLevel,
                         compressorSameFloor: details.compressorSameFloor,
@@ -116,17 +114,16 @@ class InstallationDetailsScreen extends StatelessWidget {
 
                       const SizedBox(height: 28),
 
-                      // ── Price Adjustments Info ────────────────────
                       if (details.floorLevel == FloorLevel.second ||
                           !details.compressorSameFloor) ...[
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(14),
                           decoration: BoxDecoration(
-                            color: AppTheme.primaryColor.withOpacity(0.06),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.06),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: AppTheme.primaryColor.withOpacity(0.15),
+                              color: AppTheme.primaryColor.withValues(alpha: 0.15),
                             ),
                           ),
                           child: Column(
@@ -176,14 +173,13 @@ class InstallationDetailsScreen extends StatelessWidget {
                 ),
               ),
 
-              // ── Bottom Price Preview & Button ─────────────────────
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: AppTheme.backgroundColor,
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.primaryColor.withOpacity(0.06),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.06),
                       blurRadius: 16,
                       offset: const Offset(0, -4),
                     ),

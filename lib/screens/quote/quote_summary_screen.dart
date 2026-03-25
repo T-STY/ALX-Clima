@@ -62,7 +62,6 @@ class QuoteSummaryScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // ── Equipment Card (if full package) ──────────
                       if (isFullPackage) ...[
                         Container(
                           width: double.infinity,
@@ -74,7 +73,7 @@ class QuoteSummaryScreen extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 color:
-                                    AppTheme.primaryColor.withOpacity(0.06),
+                                    AppTheme.primaryColor.withValues(alpha: 0.06),
                                 blurRadius: 12,
                                 offset: const Offset(0, 4),
                               ),
@@ -132,7 +131,6 @@ class QuoteSummaryScreen extends StatelessWidget {
                         const SizedBox(height: 20),
                       ],
 
-                      // ── Price Breakdown ───────────────────────────
                       Text(
                         'Desglose de Precios',
                         style: Theme.of(context).textTheme.titleMedium,
@@ -191,7 +189,6 @@ class QuoteSummaryScreen extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ── Warranty Info ─────────────────────────────
                       WarrantyInfoCard(
                         equipment:
                             isFullPackage ? quote.equipment : null,
@@ -202,7 +199,6 @@ class QuoteSummaryScreen extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ── Disclaimer ────────────────────────────────
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(14),
@@ -243,14 +239,13 @@ class QuoteSummaryScreen extends StatelessWidget {
                 ),
               ),
 
-              // ── Bottom Buttons ────────────────────────────────────
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: AppTheme.backgroundColor,
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.primaryColor.withOpacity(0.06),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.06),
                       blurRadius: 16,
                       offset: const Offset(0, -4),
                     ),

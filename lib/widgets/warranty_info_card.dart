@@ -24,13 +24,13 @@ class WarrantyInfoCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: includesWarranty
-            ? AppTheme.successColor.withOpacity(0.06)
-            : AppTheme.warningColor.withOpacity(0.06),
+            ? AppTheme.successColor.withValues(alpha: 0.06)
+            : AppTheme.warningColor.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: includesWarranty
-              ? AppTheme.successColor.withOpacity(0.3)
-              : AppTheme.warningColor.withOpacity(0.3),
+              ? AppTheme.successColor.withValues(alpha: 0.3)
+              : AppTheme.warningColor.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -76,7 +76,7 @@ class WarrantyInfoCard extends StatelessWidget {
               'La instalación sin compra de equipo no incluye garantía. '
               'Se recomienda adquirir el paquete completo para obtener cobertura.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppTheme.warningColor.withOpacity(0.8),
+                    color: AppTheme.warningColor.withValues(alpha: 0.8),
                   ),
             ),
           ],

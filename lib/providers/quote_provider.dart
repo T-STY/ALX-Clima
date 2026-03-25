@@ -4,8 +4,6 @@ import 'package:alx_clima/models/installation.dart';
 import 'package:alx_clima/models/quote.dart';
 import 'package:alx_clima/data/pricing_rules.dart';
 
-/// Proveedor que gestiona el flujo de cotizaci\u00f3n:
-/// selecci\u00f3n de equipo, tipo de instalaci\u00f3n, detalles y generaci\u00f3n de cotizaci\u00f3n.
 class QuoteProvider extends ChangeNotifier {
   Equipment? _selectedEquipment;
   InstallationType _installationType = InstallationType.fullPackage;
@@ -15,37 +13,29 @@ class QuoteProvider extends ChangeNotifier {
   );
   Quote? _currentQuote;
 
-  // ── Getters ──────────────────────────────────────────────────────────
-
   Equipment? get selectedEquipment => _selectedEquipment;
   InstallationType get installationType => _installationType;
   InstallationDetails get installationDetails => _installationDetails;
   Quote? get currentQuote => _currentQuote;
 
-  // ── M\u00e9todos ─────────────────────────────────────────────────────────
-
-  /// Selecciona un equipo para la cotizaci\u00f3n.
   void selectEquipment(Equipment equipment) {
     _selectedEquipment = equipment;
     _currentQuote = null;
     notifyListeners();
   }
 
-  /// Establece el tipo de instalaci\u00f3n (paquete completo o solo instalaci\u00f3n).
   void setInstallationType(InstallationType type) {
     _installationType = type;
     _currentQuote = null;
     notifyListeners();
   }
 
-  /// Establece el nivel de piso de instalaci\u00f3n.
   void setFloorLevel(FloorLevel level) {
     _installationDetails = _installationDetails.copyWith(floorLevel: level);
     _currentQuote = null;
     notifyListeners();
   }
 
-  /// Establece si el compresor estar\u00e1 en el mismo piso.
   void setCompressorLocation(bool sameFloor) {
     _installationDetails =
         _installationDetails.copyWith(compressorSameFloor: sameFloor);
@@ -53,8 +43,6 @@ class QuoteProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Genera la cotizaci\u00f3n con los datos actuales.
-  /// Retorna `true` si se gener\u00f3 exitosamente.
   bool generateQuote() {
     if (_selectedEquipment == null &&
         _installationType == InstallationType.fullPackage) {
@@ -81,7 +69,6 @@ class QuoteProvider extends ChangeNotifier {
     return true;
   }
 
-  /// Reinicia todos los datos de la cotizaci\u00f3n.
   void resetQuote() {
     _selectedEquipment = null;
     _installationType = InstallationType.fullPackage;
