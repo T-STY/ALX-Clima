@@ -423,7 +423,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
     final appointment = Appointment(
       id: 'apt-${DateTime.now().millisecondsSinceEpoch}',
-      equipmentId: _selectedEquipmentId ?? '',
+      equipmentId: _selectedEquipmentId,
       preferredDate: _selectedDate!,
       preferredTimeSlot: _selectedTimeSlot,
       serviceType: _selectedServiceType,
