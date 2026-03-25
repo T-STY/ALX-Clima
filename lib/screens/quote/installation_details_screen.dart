@@ -152,7 +152,7 @@ class InstallationDetailsScreen extends StatelessWidget {
                               const SizedBox(height: 8),
                               if (details.floorLevel == FloorLevel.second)
                                 Text(
-                                  '+ \$1,500 por instalación en segundo piso',
+                                  'Cargo adicional por instalación en segundo piso',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
@@ -160,7 +160,7 @@ class InstallationDetailsScreen extends StatelessWidget {
                                 ),
                               if (!details.compressorSameFloor)
                                 Text(
-                                  '+ \$2,000 por compresor en piso diferente',
+                                  'Cargo adicional por compresor en piso diferente',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
